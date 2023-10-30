@@ -30,7 +30,9 @@ int ContarX(Fila<X> &f, X item){
 	int contador = 0;
 	IteradorDeFila<X> it(f);
 	while(it.hayMasElementos()){
-		if(it.elementoActual() == item){contador++;}
+		if(it.elementoActual() == item){
+			contador++;
+		}
 		it.avanzar();
 	}
 	return contador;
@@ -55,15 +57,14 @@ int main() {
 	cout <<endl;
 
 	cout << pertenece(f1, 2) << endl;
-	cout << ContarX(f1, 2) << endl;
+	cout << "ContarX<int>: " << ContarX(f1, 2) << endl;
 
 	//PERSONA
-	cout << "---------------------" << endl; // 3
-	cout << fp1.cantidad() << endl; // 3
+	cout << "---------------------" << endl; //cout << fp1.cantidad() << endl; // 3
 
-	//cout << "Frente de Fila Personas: " << fp1.elemento().getNombre() << ", Edad: " << fp1.elemento().getEdad() << endl; //da in definido
-	cout << "¿p1 == p2?: " << (p1==p2) << endl;
-	cout << ContarX(fp1, p3) << endl;
+	//IteradorDeFila<Persona> itp(fp1);
+	cout << "¿p3 == p2?: " << (p3==p2) << endl;
+	//cout << "ContarX<Persona>: " << ContarX(fp1, p3) << endl;
 
 }
 

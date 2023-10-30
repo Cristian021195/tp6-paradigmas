@@ -84,7 +84,8 @@ public:
 		cout<<endl;
 	};
 
-	template <typename W>
+	//template <typename W>
+	template <class W>
 	friend class IteradorDeFila;
 };
 
