@@ -15,6 +15,7 @@
 using namespace std;
 
 int main() {
+	Persona p1("Cristian", 27);Persona p2("Cristian", 28); Persona p3("Cristian", 28);
 	Fila f1;
 	int i;
 	for(i=1;i<=MAX ;i++){
@@ -23,5 +24,7 @@ int main() {
 	f1.defila();
 	f1.insertar(2);f1.insertar(2);
 	f1.escribir();
+
+	cout << "¿p1=p2? " << (p1 == p3) << ", ¿p1.edad < p2.edad? " << (p2 < p3) << endl;
 }
 
