@@ -18,21 +18,21 @@ public:
 	Persona(){}
 	Persona(string nombre, unsigned short edad):
 	nombre(nombre), edad(edad){};
-	friend bool operator==(Persona p1, Persona &p2){// de esta manera me toma correctamente el comparador
-		cout << "[" << p1.nombre << "]" << endl;
-		cout << "[" << p2.nombre << "]" << endl;
-		if( (p1.nombre == p2.nombre) && (p1.edad == p2.edad)){
-			//cout << "son iguales" << endl;
-			return true;
+	friend bool operator==(Persona &pa, Persona &pb){// de esta manera me toma correctamente el comparador
+		cout << "[" << pa.nombre << "]" << endl;
+		cout << "[" << pb.nombre << "]" << endl;
+		if( (pa.nombre == pb.nombre) && (pa.edad == pb.edad)){
+			return true; // retorna 1
 		}
-		//cout << "son diferentes" << endl;
-		return false;
+		return false; // retorna 0
 	}
-	friend bool operator<(Persona p1, Persona &p2){
-		if(p1.edad < p2.edad){
-			return true;
+	friend bool operator<(Persona &pa, Persona &pb){
+		cout << "[" << pa.edad << "]" << endl;
+		cout << "[" << pb.edad << "]" << endl;
+		if(pa.edad < pb.edad){
+			return true; // retorna 1
 		}
-		return false;
+		return false; // retorna 0
 	}
 	void escribir(){
 		cout << "Nombre: "<< nombre << ", Edad: " << edad << endl;
