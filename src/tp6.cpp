@@ -59,12 +59,12 @@ int main() {
 	cout << pertenece(f1, 2) << endl;
 	cout << "ContarX<int>: " << ContarX(f1, 2) << endl;
 
-	//PERSONA
+	//PERSONA p2
 	cout << "---------------------" << endl; //cout << fp1.cantidad() << endl; // 3
 
 	//IteradorDeFila<Persona> itp(fp1);
 	cout << "¿p3 == p2?: " << (p3==p2) << endl;
-	//cout << "ContarX<Persona>: " << ContarX(fp1, p3) << endl;
+	cout << "ContarX<Persona>: " << ContarX(fp1, p3) << endl;
 
 }
 
