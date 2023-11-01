@@ -25,6 +25,6 @@ int main() {
 	f1.insertar(2);f1.insertar(2);
 	f1.escribir();
 
-	cout << "¿p1=p2? " << (p1 == p3) << ", ¿p1.edad < p2.edad? " << (p2 < p3) << endl;
+	cout << "1 true, 0 false | ¿p2=p3? " << (p2 == p3) << ", ¿p1.edad < p3.edad? " << (p1 < p3) << endl;
 }
 
