@@ -63,7 +63,7 @@ int main() {
 	cout << "---------------------" << endl; //cout << fp1.cantidad() << endl; // 3
 
 	//IteradorDeFila<Persona> itp(fp1);
-	cout << "¿p3 == p2?: " << (p3==p2) << endl;
+	cout << "¿p3 == p2?: " << (p3==p2) << ", ¿p1.edad < p2.edad?: " << (p1<p2) << endl;
 	//cout << "ContarX<Persona>: " << ContarX(fp1, p3) << endl;
 
 }
