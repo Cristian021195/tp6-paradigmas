@@ -11,21 +11,19 @@
 #include "Nodo.h"
 using namespace std;
 
-template <class X>
 class Fila {
-	Nodo<X>* fte;
-	Nodo<X>* fin;
+	Nodo* fte;
+	Nodo* fin;
 	int longitud;
 public:
 	Fila():fte(NULL),fin(NULL),longitud(0){};
 
-	void insertar(X dato){
-		Nodo<X> * nuevo = new Nodo<X>(dato, fin);
+	void insertar(int dato){
+		Nodo * nuevo = new Nodo(dato, fin);
 		if(longitud == 0){
 			fin=nuevo;
 			fte=nuevo;
 		}else{
-			//cout << fin->getDato() << fte->getDato() << endl; //1-1 ok
 			fin=nuevo;
 		}
 		longitud++;
@@ -33,11 +31,8 @@ public:
 
 	void defila(){
 		if(!esVacia()){
-			//cout << fin->getDato() << fte->getDato() << endl; // 3 - 1
-			Nodo<X> * PREV; Nodo<X> * FTE = fte; Nodo<X> * FIN = fin;
+			Nodo * PREV; Nodo * FTE = fte; Nodo * FIN = fin;
 			while(fin->getSiguiente() != NULL){
-				//cout << "run " << fte->getDato() << endl; // 1 - 1
-				//cout << fin->getSiguiente()->getDato() << endl; // 2 - 1
 				PREV = fin;
 				fin = fin->getSiguiente();
 			}
@@ -54,14 +49,14 @@ public:
 
 	void borrar(){
 		if(!esVacia()){
-			Nodo<X>* aux= fte;
+			Nodo* aux= fte;
 			fte = fte->getSiguiente();
 			delete aux;
 			longitud--;
 		}
 	};
 
-	X elemento(){
+	int elemento(){
 		if(!esVacia())
 			return fte->getDato();
 		else
@@ -78,14 +73,11 @@ public:
 	};
 	void escribir(){// consulta
 		cout<<"Fila: ";
-		for(Nodo<X>*aux=fin;aux!=NULL;aux=aux->getSiguiente()){
-			cout<<aux->getDato()<<" ";
+		for(Nodo*aux=fin;aux!=NULL;aux=aux->getSiguiente()){
+			cout<<aux->getDato()<<"-";
 		}
 		cout<<endl;
 	};
-
-	//template <typename W>
-	template <class W>
 	friend class IteradorDeFila;
 };
 

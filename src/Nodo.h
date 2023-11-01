@@ -11,16 +11,15 @@
 #define INDEFINIDO -9999
 using namespace std;
 
-template <class T>
 class Nodo {
-	T dato;
-	Nodo<T> *sig;
+	int dato;
+	Nodo *sig;
 public:
 	Nodo(){};
-	Nodo(T d, Nodo*s=NULL):dato(d),sig(s){};
-	T getDato(){ return dato;};
+	Nodo(int d, Nodo*s=NULL):dato(d),sig(s){};
+	int getDato(){ return dato;};
 	Nodo* getSiguiente(){return sig;};
-	void setDato(T d){dato=d;};
+	void setDato(int d){dato=d;};
 	void setSiguiente(Nodo* s){sig=s;};
 	virtual ~Nodo(){};
 };
